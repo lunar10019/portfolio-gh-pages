@@ -1,0 +1,10 @@
+.listItem {
+  font-size: 16px;
+  color: #3483cc;
+  cursor: pointer;
+  margin-left: 15px;
+
+  &:hover {
+    color: #eb5757;
+  }
+}

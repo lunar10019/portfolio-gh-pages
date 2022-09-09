@@ -1,0 +1,23 @@
+import React from "react";
+
+const ErrorMarkSvg = () => {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="8" cy="8" r="8" fill="#EB5757" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5.64309 4.70017L4.70028 5.64298L7.05731 8L4.70028 10.357L5.64309 11.2998L8.00012 8.94281L10.3571 11.2998L11.2999 10.357L8.94292 8L11.2999 5.64298L10.3571 4.70017L8.00012 7.05719L5.64309 4.70017Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+
+export default ErrorMarkSvg;

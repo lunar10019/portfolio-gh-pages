@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+
+  .deleteButton {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: -8px;
+    right: 0;
+    transition: transform 300ms ease-in-out;
+  }
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    max-height: 24px;
+    min-width: 24px;
+    padding: 0 8px 0 8px;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #ffffff;
+    margin: 0 8px 8px 0;
+    font-size: 14px;
+  }
+
+  &:hover .deleteButton {
+    display: block;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

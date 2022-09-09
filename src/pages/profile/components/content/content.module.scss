@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 1128px;
+  margin: auto;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

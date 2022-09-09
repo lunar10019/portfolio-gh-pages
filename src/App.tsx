@@ -1,9 +1,9 @@
 import React from "react";
 
-import styles from "./app.module.scss";
+import Profile from "./pages/profile/Profile";
 
 const App = () => {
-  return <div className={styles.wrapper}></div>;
+  return <Profile />;
 };
 
 export default App;

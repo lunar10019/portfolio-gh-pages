@@ -1,0 +1,20 @@
+.listSkills {
+  display: flex;
+  flex-direction: row;
+  margin-left: 15px;
+}
+
+.button {
+  color: #3483cc;
+  border-bottom: 1px dashed #3483cc;
+  cursor: pointer;
+
+  &:hover {
+    color: #eb5757;
+  }
+}
+
+span {
+  font-weight: 700;
+  margin: 0 8px 0 8px;
+}

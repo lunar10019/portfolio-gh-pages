@@ -4,8 +4,9 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   font-size: 16px;
+  line-height: 24px;
   overflow: hidden;
 }
 
@@ -30,4 +31,37 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #000000;
+}
+
+ul > li {
+  list-style: none;
+}
+
+ul > li:before {
+  margin-left: -15px;
+  content: "— ";
+  color: #000000;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+ul {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
 }

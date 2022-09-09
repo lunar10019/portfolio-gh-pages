@@ -1,0 +1,23 @@
+{
+  "userId": "1",
+  "name": "John Smith",
+  "address": "Portland, Oregon, USA ",
+  "language": "English",
+  "skills": [
+    { "id": 1, "name": "PHP", "years": 6 },
+    { "id": 2, "name": "Ruby", "years": 2 },
+    { "id": 3, "name": "Java Script", "years": 4.5 }
+  ],
+  "portfolio": [
+    { "id": 1, "text": "Bootstrap 4 Material Design (Sample Link)" },
+    { "id": 2, "text": "Modern JavaScript stack" },
+    { "id": 3, "text": "Datepicker for twitter bootstrap" },
+    { "id": 4, "text": "Fast and reliable Bootstrap widgets in Angular" }
+  ],
+  "quotes": [
+    "The only true wisdom is in knowing you know nothing...",
+    "There is only one good, knowledge, and one evil, ignorance."
+  ],
+  "availability": "Full-time",
+  "environment": "GitHub, Mac OSX"
+}

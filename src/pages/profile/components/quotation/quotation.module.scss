@@ -1,0 +1,35 @@
+.quotation {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 16px 0 0 20px;
+  width: 232px;
+  // margin-left: 20px;
+
+  P {
+    display: -webkit-box;
+    text-indent: 0.5em;
+    text-align: justify;
+    text-align: center;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .icon {
+    position: absolute;
+    opacity: 0.2;
+    top: -15px;
+    left: -15px;
+  }
+
+  .rotate_icon {
+    transform: rotate(180deg);
+    position: absolute;
+    opacity: 0.2;
+    bottom: -14px;
+    right: -15px;
+  }
+}

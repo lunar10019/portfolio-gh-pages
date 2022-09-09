@@ -10,10 +10,7 @@ import Skill from "./Skill";
 const Header = () => {
   const [input, setInput] = useState<boolean>(false);
 
-  const userName = useSelector((state: State) => state.name);
-  const userAddress = useSelector((state: State) => state.address);
-  const userLanguage = useSelector((state: State) => state.language);
-  const userSkills = useSelector((state: State) => state.skills);
+  const data = useSelector((state: State) => state);
 
   const openInputHandler = () => {
     setInput(true);
@@ -29,20 +26,20 @@ const Header = () => {
 
           <div className={styles.user_information}>
             <EditableField size={"lg"}>
-              <div className={styles.text}>{userName}</div>
+              <div className={styles.text}>{data.name}</div>
             </EditableField>
 
             <EditableField size={"md"}>
-              <div className={styles.text}>{userAddress}</div>
+              <div className={styles.text}>{data.address}</div>
             </EditableField>
 
             <div className={styles.language}>
               <img src="./images/flag.png" alt="flag" />
-              <p>{userLanguage}</p>
+              <p>{data.language}</p>
             </div>
 
             <div className={styles.skills}>
-              {userSkills.map((item) => (
+              {data.skills.map((item) => (
                 <Skill key={item.id} title={item.name} />
               ))}
 

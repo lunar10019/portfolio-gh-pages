@@ -30,18 +30,18 @@
     color: #000000;
   }
 
+  .icon {
+    display: flex;
+    margin-right: 4px;
+    cursor: pointer;
+  }
+
   span {
     position: absolute;
     color: #ff0000;
     top: 0px;
     right: -120px;
     font-size: 14px;
-  }
-
-  .icon {
-    display: flex;
-    margin-right: 4px;
-    cursor: pointer;
   }
 }
 

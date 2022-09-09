@@ -2,37 +2,35 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import styles from "./content.module.scss";
-import Experience from "./Experience";
-import Portfolio from "./Portfolio";
-import SampleCode from "./SampleCode";
+import Experience from "../experience/Experience";
+import Portfolio from "../portfolio/Portfolio";
+import SampleCode from "../sampleCode/SampleCode";
 import Map from "../../../../components/map/Map";
-import Availability from "./Availability";
-import Environment from "./Environment";
+import Availability from "../availability/Availability";
+import Environment from "../environment/Environment";
 import { State } from "../../../../store/types";
+import Quotation from "../quotation/Quotation";
 
 const Content = () => {
-  const availability = useSelector((state: State) => state.availability);
-  const environment = useSelector((state: State) => state.availability);
-  const portfolio = useSelector((state: State) => state.portfolio);
-  const skills = useSelector((state: State) => state.skills);
+  const data = useSelector((state: State) => state);
 
   return (
     <article className={styles.wrapper}>
       <div className={styles.content}>
-        <Portfolio data={portfolio} />
-        <Experience data={skills} />
+        <Portfolio data={data.portfolio} />
+        <Experience data={data.skills} />
         <SampleCode />
 
         <div className={styles.container}>
-          <Availability text={availability} />
-          <Environment text={environment} />
+          <Availability text={data.availability} />
+          <Environment text={data.environment} />
         </div>
       </div>
 
       <div className={styles.content}>
-        <Availability text={availability} />
+        <Quotation title={"The Most Amaizing..."} text={data.quotes[0]} />
 
-        <Availability text={availability} />
+        <Quotation title={"In clients I look for..."} text={data.quotes[1]} />
 
         <Map />
       </div>

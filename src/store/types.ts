@@ -1,6 +1,6 @@
 export interface State {
   userId: string;
-  name: string;
+  fullName: string;
   address: string;
   language: string;
   skills: ISkills[];
@@ -13,7 +13,7 @@ export interface State {
 export interface ISkills {
   id: number;
   name: string;
-  years: number;
+  years: number | null;
 }
 
 export interface IPortfolio {

@@ -1,9 +1,8 @@
 import React, { FC, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import classNames from "classnames";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+import classNames from "classnames";
 import CheckMarkSvg from "../icons/CheckMarkSvg";
 import styles from "./input.module.scss";
 import ErrorMarkSvg from "../icons/ErrorMarkSvg";
@@ -12,22 +11,24 @@ interface Props
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
   title?: string;
   size?: string;
+  name: string;
+  schema: any;
+  defaultValue?: string;
+  handleSumbit: (data: any) => void;
 }
 
-const schema = yup
-  .object({
-    title: yup.string().required(),
-    address: yup.string().required(),
-    skill: yup.string().required(),
-    year: yup.number().positive().integer().required(),
-  })
-  .required();
-
-const Input: FC<Props> = ({ size = "md", ...props }) => {
+const Input: FC<Props> = ({
+  size = "md",
+  name,
+  schema,
+  defaultValue,
+  handleSumbit,
+  ...props
+}) => {
   const {
     register,
-    formState: { errors },
-    handleSubmit,
+    getValues,
+    formState: { errors, isValid },
     setFocus,
   } = useForm({
     mode: "onChange",
@@ -36,29 +37,30 @@ const Input: FC<Props> = ({ size = "md", ...props }) => {
   });
 
   useEffect(() => {
-    setFocus("title");
-  }, [setFocus]);
+    setFocus(name);
+  }, [setFocus, name]);
 
   const onSubmit = () => {
-    console.log("!!!!");
+    if (!isValid) {
+      return;
+    }
+    handleSumbit(getValues());
   };
 
   return (
     <div
-      className={styles.container}
-      style={{ borderBottom: errors.title ? "1px solid #FF0000" : "" }}
+      className={classNames(styles.container, !isValid && styles.errorMessage)}
     >
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          {...register("title", { required: true })}
-          className={classNames(styles[size])}
-          {...props}
-        />
-        {errors.title && <span>Error Description</span>}
-      </form>
+      <input
+        {...register(name)}
+        defaultValue={defaultValue}
+        className={classNames(styles[size])}
+        {...props}
+      />
+      {errors[name] && <span>Error Description</span>}
 
       <button type={"submit"} onClick={onSubmit} className={styles.icon}>
-        {errors.title ? <ErrorMarkSvg /> : <CheckMarkSvg />}
+        {errors[name] ? <ErrorMarkSvg /> : <CheckMarkSvg />}
       </button>
     </div>
   );

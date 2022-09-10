@@ -1,28 +1,58 @@
-import classNames from "classnames";
 import React, { FC, ReactNode, useState } from "react";
-import Input from "../input/Input";
+import classNames from "classnames";
 
+import Input from "../input/Input";
 import styles from "./editableField.module.scss";
 
 interface Props {
-  title?: string;
   size?: string;
   children: ReactNode;
+  name: string;
+  schema: any;
+  defaultValue?: string;
+  onSubmit: (data: any) => void;
 }
 
-const EditableField: FC<Props> = ({ title, size = "md", children }) => {
+const EditableField: FC<Props> = ({
+  size = "md",
+  children,
+  name,
+  schema,
+  defaultValue,
+  onSubmit,
+}) => {
   const [input, setInput] = useState<boolean>(false);
 
-  const onClickHandler = () => {
-    setInput(true);
+  const onClickHandler = (bool: boolean) => {
+    setInput(bool);
+  };
+
+  const handleSumbit = (data: any) => {
+    onSubmit(data);
+    setInput(false);
   };
 
   return (
-    <div onClick={onClickHandler}>
+    <div>
       {input ? (
-        <Input placeholder={title} size={size} />
+        <Input
+          placeholder={defaultValue}
+          size={size}
+          name={name}
+          schema={schema}
+          defaultValue={defaultValue}
+          handleSumbit={handleSumbit}
+        />
       ) : (
-        <div className={classNames(styles.container, styles[size])}>
+        <div
+          onClick={() => onClickHandler(true)}
+          className={classNames(
+            styles.container,
+            name === "fullName" && styles.hover,
+            name === "address" && styles.hover,
+            styles[size]
+          )}
+        >
           {children}
         </div>
       )}

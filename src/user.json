@@ -1,6 +1,6 @@
 {
   "userId": "1",
-  "name": "John Smith",
+  "fullName": "John Smith",
   "address": "Portland, Oregon, USA ",
   "language": "English",
   "skills": [

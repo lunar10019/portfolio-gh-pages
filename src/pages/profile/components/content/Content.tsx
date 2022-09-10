@@ -18,7 +18,9 @@ const Content = () => {
     <article className={styles.wrapper}>
       <div className={styles.content}>
         <Portfolio data={data.portfolio} />
+
         <Experience data={data.skills} />
+
         <SampleCode />
 
         <div className={styles.container}>

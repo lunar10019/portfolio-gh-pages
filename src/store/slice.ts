@@ -8,12 +8,41 @@ export const profileSlice = createSlice({
   name: "profile",
   initialState,
   reducers: {
-    addName: (state, action) => {
-      console.log("1231");
+    editName: (state, action) => {
+      state.fullName = action.payload.fullName;
+    },
+
+    editAddress: (state, action) => {
+      state.address = action.payload.address;
+    },
+
+    addSkill: (state, action) => {
+      const newSkill = {
+        id: state.skills.length + 1,
+        name: action.payload.skill,
+        years: null,
+      };
+      state.skills.push(newSkill);
+    },
+
+    deleteSkill: (state, action) => {
+      state.skills = state.skills.filter((item) => item.id !== action.payload);
+    },
+
+    editExperience: (state, action) => {
+      const objIndex = state.skills.findIndex(
+        (obj) => obj.id === action.payload.id
+      );
+      const newYears = +action.payload.data.year;
+
+      state.skills[objIndex].years = newYears;
+
+      console.log(action.payload);
     },
   },
 });
 
-export const { addName } = profileSlice.actions;
+export const { editName, editAddress, addSkill, deleteSkill, editExperience } =
+  profileSlice.actions;
 
 export default profileSlice.reducer;

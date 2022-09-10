@@ -1,20 +1,23 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+import { fullNameSchema, addressSchema, skillSchema } from "./schemes";
 import EditableField from "../../../../components/editableField/EditableField";
 import PrinterSvg from "../../../../components/icons/PrinterSvg";
 import { State } from "../../../../store/types";
 import styles from "./header.module.scss";
 import Skill from "./Skill";
+import { editName, editAddress, addSkill } from "../../../../store/slice";
 
 const Header = () => {
-  const [input, setInput] = useState<boolean>(false);
+  const dispatch = useDispatch();
+  const user = useSelector((state: State) => state);
 
-  const data = useSelector((state: State) => state);
+  const handleEditName = (data: { fullName: string }) =>
+    dispatch(editName(data));
 
-  const openInputHandler = () => {
-    setInput(true);
-  };
+  const handleEditAddress = (data: { address: string }) =>
+    dispatch(editAddress(data));
 
   return (
     <header className={styles.header_container}>
@@ -25,26 +28,43 @@ const Header = () => {
           </div>
 
           <div className={styles.user_information}>
-            <EditableField size={"lg"}>
-              <div className={styles.text}>{data.name}</div>
+            <EditableField
+              onSubmit={handleEditName}
+              size="lg"
+              name="fullName"
+              schema={fullNameSchema}
+              defaultValue={user.fullName}
+            >
+              <div className={styles.text}>{user.fullName}</div>
             </EditableField>
 
-            <EditableField size={"md"}>
-              <div className={styles.text}>{data.address}</div>
+            <EditableField
+              onSubmit={handleEditAddress}
+              size="md"
+              name="address"
+              schema={addressSchema}
+              defaultValue={user.address}
+            >
+              <div className={styles.text}>{user.address}</div>
             </EditableField>
 
             <div className={styles.language}>
               <img src="./images/flag.png" alt="flag" />
-              <p>{data.language}</p>
+              <p>{user.language}</p>
             </div>
 
             <div className={styles.skills}>
-              {data.skills.map((item) => (
-                <Skill key={item.id} title={item.name} />
+              {user.skills.map((skill) => (
+                <Skill key={skill.id} title={skill.name} id={skill.id} />
               ))}
 
-              <EditableField size={"sm"}>
-                <Skill isAddButton onClick={openInputHandler} />
+              <EditableField
+                size="sm"
+                name="skill"
+                schema={skillSchema}
+                onSubmit={(data) => dispatch(addSkill(data))}
+              >
+                <Skill isAddButton />
               </EditableField>
             </div>
           </div>

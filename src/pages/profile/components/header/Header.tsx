@@ -51,10 +51,8 @@ const Header = () => {
         </div>
 
         <div className={styles.printer}>
-          <div>
-            <PrinterSvg />
-          </div>
-          <div className={styles.text}>{"Print this page"}</div>
+          <PrinterSvg />
+          <p>{"Print this page"}</p>
         </div>
       </div>
     </header>

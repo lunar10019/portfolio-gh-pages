@@ -7,4 +7,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  @media (max-width: 980px) {
+    font-size: 18px;
+    line-height: 18px;
+  }
 }

@@ -4,6 +4,10 @@
   cursor: pointer;
   margin-left: 15px;
 
+  @media (max-width: 980px) {
+    font-size: 14px;
+  }
+
   &:hover {
     color: #eb5757;
   }

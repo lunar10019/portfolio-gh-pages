@@ -10,6 +10,10 @@
   border-bottom: 1px solid #000000;
   cursor: pointer;
 
+  @media (max-width: 980px) {
+    max-width: 200px;
+  }
+
   .text {
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -42,6 +46,10 @@
     top: 0px;
     right: -120px;
     font-size: 14px;
+
+    @media (max-width: 980px) {
+      font-size: 10px;
+    }
   }
 }
 
@@ -55,6 +63,11 @@
   height: 24px;
   font-size: 16px;
   font-weight: 400;
+
+  @media (max-width: 980px) {
+    min-width: 80px;
+    font-size: 14px;
+  }
 }
 
 .md {
@@ -62,6 +75,11 @@
   min-width: 340px;
   font-size: 16px;
   font-weight: 400;
+
+  @media (max-width: 980px) {
+    min-width: 200px;
+    font-size: 14px;
+  }
 }
 
 .lg {
@@ -70,4 +88,9 @@
   font-size: 40px;
   font-weight: 500;
   line-height: 48px;
+
+  @media (max-width: 980px) {
+    min-width: 200px;
+    font-size: 28px;
+  }
 }

@@ -5,7 +5,7 @@ import styles from "./content.module.scss";
 import Experience from "../experience/Experience";
 import Portfolio from "../portfolio/Portfolio";
 import SampleCode from "../sampleCode/SampleCode";
-import Map from "../../../../components/map/Map";
+import MapComponent from "../../../../components/map/Map";
 import Availability from "../availability/Availability";
 import Environment from "../environment/Environment";
 import { State } from "../../../../store/types";
@@ -32,7 +32,7 @@ const Content = () => {
 
         <Quotation title={"In clients I look for..."} text={data.quotes[1]} />
 
-        <Map />
+        <MapComponent />
       </div>
     </article>
   );

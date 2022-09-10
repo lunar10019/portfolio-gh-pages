@@ -1,7 +1,6 @@
 import * as yup from "yup";
 
 const regex = /[`!@#$%^&*()_+=[\]{};:\\|<>/?~]/;
-// const regex = /^[а-яА-ЯёЁa-zA-Z0-9]+$/;
 
 export const fullNameSchema = yup
   .object({

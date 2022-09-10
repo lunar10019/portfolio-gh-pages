@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { fullNameSchema, addressSchema, skillSchema } from "./schemes";
+import { fullNameSchema, addressSchema, skillSchema } from "./schemas";
 import EditableField from "../../../../components/editableField/EditableField";
 import PrinterSvg from "../../../../components/icons/PrinterSvg";
 import { State } from "../../../../store/types";

@@ -20,7 +20,6 @@ const MapComponent = () => {
       .then((data) => {
         const api =
           data.response.GeoObjectCollection.featureMember[0].GeoObject.Point;
-        console.log("api", api);
         const currentCoordinates = api.pos
           .replace(/ /g, ",")
           .split(",")

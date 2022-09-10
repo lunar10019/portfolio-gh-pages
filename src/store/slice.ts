@@ -36,8 +36,6 @@ export const profileSlice = createSlice({
       const newYears = +action.payload.data.year;
 
       state.skills[objIndex].years = newYears;
-
-      console.log(action.payload);
     },
   },
 });

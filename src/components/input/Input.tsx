@@ -28,7 +28,7 @@ const Input: FC<Props> = ({
   const {
     register,
     getValues,
-    formState: { errors, isValid },
+    formState: { errors, isValid, isDirty },
     setFocus,
   } = useForm({
     mode: "onChange",
@@ -46,10 +46,14 @@ const Input: FC<Props> = ({
     }
     handleSumbit(getValues());
   };
+  const error = errors[name]?.message;
 
   return (
     <div
-      className={classNames(styles.container, !isValid && styles.errorMessage)}
+      className={classNames(
+        styles.container,
+        !isValid && isDirty && styles.errorMessage
+      )}
     >
       <input
         {...register(name)}
@@ -57,7 +61,7 @@ const Input: FC<Props> = ({
         className={classNames(styles[size])}
         {...props}
       />
-      {errors[name] && <span>Error Description</span>}
+      {errors[name] && <span>{error as string}</span>}
 
       <button type={"submit"} onClick={onSubmit} className={styles.icon}>
         {errors[name] ? <ErrorMarkSvg /> : <CheckMarkSvg />}

@@ -112,6 +112,17 @@
       height: 24px;
       cursor: pointer;
 
+      &:hover {
+        svg {
+          path {
+            fill: #eb5757 !important;
+          }
+        }
+        p {
+          color: #eb5757;
+        }
+      }
+
       @media (max-width: 910px) {
         margin-right: 5px;
       }
@@ -127,10 +138,6 @@
           @media (max-width: 910px) {
             display: none;
           }
-        }
-
-        &:hover {
-          color: #eb5757;
         }
       }
     }

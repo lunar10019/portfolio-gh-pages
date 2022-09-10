@@ -5,7 +5,7 @@ import Section from "../../../../components/section/Section";
 import Title from "../../../../components/title/Title";
 import { ISkills } from "../../../../store/types";
 import styles from "./experience.module.scss";
-import { yearSchema } from "../header/schemes";
+import { yearSchema } from "../header/schemas";
 import { editExperience } from "../../../../store/slice";
 import { formatNumber, pluralize } from "../../../../utils";
 import { useDispatch } from "react-redux";
@@ -35,6 +35,7 @@ const Experience: FC<Props> = ({ data }) => {
               size={"xs"}
               name={"year"}
               schema={yearSchema}
+              defaultValue={item.years ? String(item.years) : ""}
             >
               {item.years ? (
                 <button className={styles.button}>

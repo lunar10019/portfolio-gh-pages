@@ -8,6 +8,7 @@ import { State } from "../../../../store/types";
 import styles from "./header.module.scss";
 import Skill from "./Skill";
 import { editName, editAddress, addSkill } from "../../../../store/slice";
+import Avatar from "../avatar/Avatar";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -23,9 +24,7 @@ const Header = () => {
     <header className={styles.header_container}>
       <div className={styles.container}>
         <div className={styles.user}>
-          <div className={styles.avatar}>
-            <img src="./images/avatar.png" alt="avatar" />
-          </div>
+          <Avatar />
 
           <div className={styles.user_information}>
             <EditableField

@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { fullNameSchema, addressSchema, skillSchema } from "./schemas";
 import EditableField from "../../../../components/editableField/EditableField";
-import PrinterSvg from "../../../../components/icons/PrinterSvg";
 import { State } from "../../../../store/types";
 import styles from "./header.module.scss";
 import Skill from "./Skill";
 import { editName, editAddress, addSkill } from "../../../../store/slice";
 import Avatar from "../avatar/Avatar";
+import DownloadPage from "../downloadPage/DownloadPage";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -69,10 +69,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className={styles.printer}>
-          <PrinterSvg />
-          <p>{"Print this page"}</p>
-        </div>
+        <DownloadPage rootElementId={"pageDownload"} />
       </div>
     </header>
   );

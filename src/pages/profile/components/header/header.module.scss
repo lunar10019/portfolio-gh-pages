@@ -77,41 +77,5 @@
         }
       }
     }
-
-    .printer {
-      display: flex;
-      flex-direction: row;
-      height: 24px;
-      cursor: pointer;
-
-      &:hover {
-        svg {
-          path {
-            fill: #eb5757 !important;
-          }
-        }
-        p {
-          color: #eb5757;
-        }
-      }
-
-      @media (max-width: 910px) {
-        margin-right: 5px;
-      }
-
-      p {
-        line-height: 24px;
-        color: #3483cc;
-        margin-left: 8px;
-
-        @media (max-width: 980px) {
-          font-size: 12px;
-
-          @media (max-width: 910px) {
-            display: none;
-          }
-        }
-      }
-    }
   }
 }

@@ -7,7 +7,7 @@ import styles from "./profile.module.scss";
 
 const Profile = () => {
   return (
-    <main className={styles.wrapper}>
+    <main className={styles.wrapper} id={"pageDownload"}>
       <Header />
       <Content />
     </main>

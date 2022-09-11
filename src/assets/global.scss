@@ -52,6 +52,7 @@ ul > li {
 }
 
 ul > li:before {
+  position: absolute;
   margin-left: -15px;
   content: "— ";
   color: #000000;

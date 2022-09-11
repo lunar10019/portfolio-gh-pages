@@ -13,7 +13,7 @@ const MapComponent = () => {
   const address = useSelector((state: State) => state.address);
 
   useEffect(() => {
-    const url = `https://geocode-maps.yandex.ru/1.x/?apikey=e5dcb57a-d690-4620-a9a7-a2d590073fef&lang=ru_RU&format=json&geocode=${address}`;
+    const url = `https://geocode-maps.yandex.ru/1.x/?apikey=${API_KEY}&lang=ru_RU&format=json&geocode=${address}`;
 
     fetch(url)
       .then((resp) => resp.json())

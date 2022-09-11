@@ -30,8 +30,8 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    outline: 4px solid white;
-    border-radius: 85px;
+    border: 4px solid white;
+    border-radius: 50%;
 
     img {
       min-width: 170px;
@@ -65,7 +65,7 @@
     width: 32px;
     height: 32px;
     background-color: #3483cc;
-    border-radius: 85px;
+    border-radius: 50%;
     top: 8px;
     right: 0px;
     transition: transform 300ms ease-in-out;

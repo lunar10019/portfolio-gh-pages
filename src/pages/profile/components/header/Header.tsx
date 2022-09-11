@@ -48,7 +48,10 @@ const Header = () => {
             </EditableField>
 
             <div className={styles.language}>
-              <img src="./images/flag.png" alt="flag" />
+              <img
+                src={process.env.PUBLIC_URL + "/images/flag.png"}
+                alt="flag"
+              />
               <p>{user.language}</p>
             </div>
 

@@ -1,7 +1,7 @@
 .listSkills {
   display: flex;
   flex-direction: row;
-  margin-left: 15px;
+  margin-left: 20px;
   overflow: hidden;
 
   & > span {
@@ -9,7 +9,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    margin: 0 8px 0 8px;
+    margin: 0 8px 0 2px;
     font-weight: 700;
   }
 }

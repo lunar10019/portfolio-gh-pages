@@ -4,7 +4,9 @@ import ChangeSvg from "../../../../components/icons/ChangeSvg";
 import styles from "./avatar.module.scss";
 
 const Avatar = () => {
-  const [image, setImage] = useState<string>("./images/avatar.png");
+  const [image, setImage] = useState<string>(
+    process.env.PUBLIC_URL + "/images/avatar.png"
+  );
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.files?.[0]) {

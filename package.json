@@ -1,6 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
+  "homepage": "https://lunar10019.github.io/portfolio-gh-pages",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "2.9.7",
@@ -21,6 +22,7 @@
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-react": "7.31.7",
     "eslint-plugin-react-hooks": "4.6.0",
+    "gh-pages": "^4.0.0",
     "gl-matrix": "3.4.3",
     "install": "0.13.0",
     "jspdf": "2.5.1",
@@ -39,6 +41,8 @@
     "yup": "0.32.11"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

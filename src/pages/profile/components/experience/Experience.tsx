@@ -24,7 +24,7 @@ const Experience: FC<Props> = ({ data }) => {
     <Section>
       <Title text={"Experience"} />
 
-      <ul>
+      <ul className={styles.container}>
         {dataSorted.map((item: ISkills) => (
           <li key={item.id} className={styles.listSkills}>
             <span>{item.name}</span>{" "}

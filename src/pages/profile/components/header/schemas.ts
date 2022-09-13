@@ -25,7 +25,7 @@ export const addressSchema = yup
 
 export const skillSchema = yup
   .object({
-    skill: yup.string().required("Field must not be empty"),
+    skill: yup.string().required("Field must not be empty").max(50, "Max 50"),
   })
   .required();
 

@@ -52,7 +52,6 @@ ul > li {
 }
 
 ul > li:before {
-  position: absolute;
   margin-left: -20px;
   padding-right: 10px;
   content: "— ";
@@ -61,7 +60,6 @@ ul > li:before {
 
 li {
   margin-bottom: 8px;
-  margin-left: 10px;
 }
 
 ul {
